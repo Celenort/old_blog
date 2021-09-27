@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
@@ -13,6 +14,7 @@ layout: default
     {% include breadcrumbs.html %}
   {% endunless %}
 {% endif %}
+
 
 <div id="main" role="main">
   {% include sidebar.html %}
@@ -32,7 +34,7 @@ layout: default
           {% include page__meta.html %}
         </header>
       {% endunless %}
-
+      
       <section class="page__content e-content" itemprop="text">
         {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
@@ -55,7 +57,7 @@ layout: default
       </footer>
 
       {% if page.share %}{% include social-share.html %}{% endif %}
-
+      {% include comment-disqus.html %}
       {% include post_pagination.html %}
     </div>
 
@@ -63,7 +65,7 @@ layout: default
       {% include comments.html %}
     {% endif %}
   </article>
-
+  
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
     <div class="page__related">
@@ -88,4 +90,5 @@ layout: default
       </div>
     </div>
   {% endif %}
+
 </div>
