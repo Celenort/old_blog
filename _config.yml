@@ -104,8 +104,8 @@ analytics:
 author:
   name             : "Celenort"
   avatar           : "/assets/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "게임, 음악, 코딩... 그리고 **나**"
-  location         : "Republic of Korea"
+  bio              : "Archives, Today I Learned(TIL)"
+  location         : "Seoul, Rep. of Korea"
   email            : "b015404.asd@gmail.com"
   links:
     #- label: "Email"
