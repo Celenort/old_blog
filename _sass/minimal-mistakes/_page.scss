@@ -8,6 +8,15 @@
   margin-right: auto;
   padding-left: 1em;
   padding-right: 1em;
+
+  padding-top: 10px;
+  @include breakpoint($large) {
+    padding-top: 100px;
+  }
+
+  @include breakpoint($x-large) {
+    padding-top: 100px;
+  }
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   max-width: 100%;
@@ -28,6 +37,7 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
           flex-direction: column;
+
 }
 
 .initial-content,
