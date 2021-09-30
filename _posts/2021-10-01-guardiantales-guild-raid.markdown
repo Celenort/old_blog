@@ -11,5 +11,6 @@ categories: ["game", "guardiantales"]
 원본 : [길드레이드 시트][raid-sheet]
 
 W.I.P.
+{% include guardiantales/시즌 20 금지된 숲.html %}
 
 [raid-sheet]: https://han.gl/cVq61
