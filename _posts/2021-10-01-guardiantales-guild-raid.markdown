@@ -12,5 +12,7 @@ categories: ["game", "guardiantales"]
 
 W.I.P.
 {% include guardiantales/시즌 20 금지된 숲.html %}
+{% include guardiantales/s20f.html %}
+
 
 [raid-sheet]: https://han.gl/cVq61
