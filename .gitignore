@@ -27,3 +27,7 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+
+# unfinished posts
+_posts/2021-11-24-csharp-11.md
+_posts/2021-10-11-raid21-full.md
