@@ -20,6 +20,13 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "etc" %}
+                        <li><a href="/categories/life/etc" class="">미분류 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title"><a href="/categories/study">Univ. Study</a></span>
             <ul>
                 {% for category in site.categories %}

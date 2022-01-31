@@ -1,12 +1,10 @@
 ---
-title: "Physics Lab 2"
+title: "Physics"
 layout: archive
-permalink: categories/study/phys/physlab2
+permalink: categories/study/phys/
 author_profile: true
 sidebar_main: true
 ---
 
-#### 21년도 가을학기
-
-{% assign posts = site.categories.physlab2 %}
+{% assign posts = site.categories.phys %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
