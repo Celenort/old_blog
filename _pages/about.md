@@ -1,9 +1,8 @@
 ---
 permalink: /about/
 title: "About Celenort"
-toc: true
-toc_sticky: true
-toc_label: "Abstract"
+toc: false
+toc_sticky: false
 layout: single
 sidebar_main: false
 ---
