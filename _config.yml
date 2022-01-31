@@ -104,7 +104,7 @@ analytics:
 author:
   name             : "Celenort"
   avatar           : "/assets/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "인간은 **망각**의 동물"
   location         : "Seoul, Rep. of Korea"
   email            : "b015404.asd@gmail.com"
   links:
