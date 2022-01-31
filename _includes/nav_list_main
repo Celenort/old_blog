@@ -72,6 +72,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "chemlab" %}
+                        <li><a href="/categories/study/chemlab" class="">화학실험 [21 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "philosophy" %}
                         <li><a href="/categories/study/philosophy" class="">서양철학의 이해 [21 Wint] ({{category[1].size}})</a></li>
                     {% endif %}
