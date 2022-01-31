@@ -8,40 +8,87 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            전체 글 수</style> {{sum}}</style> 개</style> 
+            Total Posts : </style> {{sum}}</style> 개</style> 
       </li>
       <li>
-        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
-        <span class="nav__sub-title">C/C++/C#</span>
-            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+
+        <span class="nav__sub-title"><a href="/categories/life">Lifestyle</a></span>
             <ul>
-                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
-                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                {% for category in site.categories %}
+                    {% if category[0] == "algorithm" %}
+                        <li><a href="/categories/life/algorithm" class="">Leetcode 알고리즘 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title"><a href="/categories/study">Univ. Study</a></span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "phys" %}
+                        <li><a href="/categories/study/phys" class="">물리 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "physlab1" %}
+                        <li><a href="/categories/study/phys/physlab1" class="">ㄴ물리학실험 1 [21 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "physlab2" %}
+                        <li><a href="/categories/study/phys/physlab2" class="">ㄴ물리학실험 2 [21 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "csharp" %}
-                        <li><a href="/categories/csharp" class="">C # ({{category[1].size}})</a></li>
+                        <li><a href="/categories/study/csharp" class="">컴퓨터의 개념과 실습 [21 Fall] ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "STL" %}
-                        <li><a href="/categories/stl" class="">C++ STL & 표준 ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        <span class="nav__sub-title">Coding Test</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Algorithm" %}
-                        <li><a href="/categories/algorithm" class="">알고리즘 구현 (with C++) ({{category[1].size}})</a></li>
+                    {% if category[0] == "english" %}
+                        <li><a href="/categories/study/english" class="">대학영어 1 [21 Fall] ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Programmers" %}
-                        <li><a href="/categories/programmers" class="">프로그래머스 ({{category[1].size}})</a></li>
+                    {% if category[0] == "chemistry" %}
+                        <li><a href="/categories/study/chemistry" class="">화학 [21 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "philosophy" %}
+                        <li><a href="/categories/study/philosophy" class="">서양철학의 이해 [21 Wint] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title"><a href="/categories/music">Music</a></span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "pohi" %}
+                        <li><a href="/categories/music/pohi" class="">Po-Hi ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "pnopractice" %}
+                        <li><a href="/categories/music/pnopractice" class="">피아노 연습 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "compose" %}
+                        <li><a href="/categories/music/compose" class="">작곡 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
