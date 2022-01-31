@@ -35,7 +35,7 @@ comments: true
           {% include page__meta.html %}
         </header>
       {% endunless %}
-      
+
       <section class="page__content e-content" itemprop="text">
         {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
@@ -58,7 +58,6 @@ comments: true
       </footer>
 
       {% if page.share %}{% include social-share.html %}{% endif %}
-      {% include comment-disqus.html %}
       {% include post_pagination.html %}
     </div>
 
@@ -66,7 +65,7 @@ comments: true
       {% include comments.html %}
     {% endif %}
   </article>
-  
+
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
     <div class="page__related">
@@ -91,5 +90,4 @@ comments: true
       </div>
     </div>
   {% endif %}
-
 </div>

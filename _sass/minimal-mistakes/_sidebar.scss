@@ -7,7 +7,6 @@
    ========================================================================== */
 
 .sidebar {
-  padding-top: 50px;
   @include clearfix();
   // @include breakpoint(max-width $large) {
   //   /* fix z-index order of follow links */
@@ -23,7 +22,6 @@
     opacity: 0.75;
     -webkit-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out;
-    position: fixed;
 
     &:hover {
       opacity: 1;
