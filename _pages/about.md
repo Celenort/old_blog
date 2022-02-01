@@ -38,8 +38,9 @@ comments: false
 
 ### ☎️ Contact
 
-- 📨 [Email](mailto:celenort@snu.ac.kr) me!
+- 📨 [Email](mailto:celenort@snu.ac.kr) me.
 - 💬 Visit my [Blog](https://celenort.github.io)!
+- 🎚️ [Github](https://github.com/celenort) 
 
 ### 🗒️ Github Statistics
 
