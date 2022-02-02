@@ -1,5 +1,5 @@
 ---
-title: '스피노자'
+title: '서양철학의 이해 - 스피노자'
 layout: single
 categories:
   - study

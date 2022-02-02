@@ -1,5 +1,5 @@
 ---
-title: '칸트'
+title: '서양철학의 이해 - 칸트'
 layout: single
 categories:
   - study

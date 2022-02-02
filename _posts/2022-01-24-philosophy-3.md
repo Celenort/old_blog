@@ -1,5 +1,5 @@
 ---
-title: '데카르트'
+title: '서양철학의 이해 - 데카르트'
 layout: single
 categories:
   - study

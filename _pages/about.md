@@ -40,4 +40,4 @@ comments: false
 
 - 📨 [Email](mailto:celenort@snu.ac.kr) me.
 - 💬 Visit my [Blog](https://celenort.github.io)!
-- 🎚️ [Github](https://github.com/celenort) 
+- 🎚️ [Github](https://github.com/celenort)  

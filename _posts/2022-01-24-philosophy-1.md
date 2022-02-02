@@ -1,5 +1,5 @@
 ---
-title: '플라톤 철학'
+title: '서양철학의 이해 - 플라톤'
 layout: single
 categories:
   - study

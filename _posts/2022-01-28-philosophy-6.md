@@ -1,5 +1,5 @@
 ---
-title: '니체'
+title: '서양철학의 이해 - 니체'
 layout: single
 categories:
   - study

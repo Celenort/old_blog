@@ -1,5 +1,5 @@
 ---
-title: '아리스토텔레스'
+title: '서양철학의 이해 - 아리스토텔레스'
 layout: single
 categories:
   - study
