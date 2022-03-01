@@ -57,6 +57,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "stats" %}
+                        <li><a href="/categories/study/stats" class="">통계학 [21 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "english" %}
                         <li><a href="/categories/study/english" class="">대학영어 1 [21 Fall] ({{category[1].size}})</a></li>
                     {% endif %}
