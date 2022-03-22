@@ -90,6 +90,20 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "offshore" %}
+                        <li><a href="/categories/study/offshore" class="">해양플랫폼공학개론 [22 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "psychology" %}
+                        <li><a href="/categories/study/psychology" class="">심리학개론 [22 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title"><a href="/categories/music">Music</a></span>
             <ul>
                 {% for category in site.categories %}
