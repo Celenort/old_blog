@@ -1,7 +1,7 @@
 ---
-title: "Introduction to Offshore Engineering"
+title: "Psychology"
 layout: archive
-permalink: categories/study/chemistry
+permalink: categories/study/psychology
 author_profile: true
 sidebar_main: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Offshore Engineering"
 layout: archive
-permalink: categories/study/chemistry
+permalink: categories/study/offshore
 author_profile: true
 sidebar_main: true
 ---
