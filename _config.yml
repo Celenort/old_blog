@@ -20,7 +20,7 @@ title                    : "셀레 \"노트\""
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Celenort"
-description              : "배운걸 잊어버리는건 너무 아깝잖아"
+description              : "Post NOT to forget"
 url                      : "https://celenort.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "Celenort/celenort.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -104,9 +104,9 @@ analytics:
 author:
   name             : "Celenort"
   avatar           : "/assets/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "인간은 **망각**의 동물"
+  bio              : "Post **NOT** to forget"
   location         : "Seoul, Rep. of Korea"
-  email            : "b015404.asd@gmail.com"
+  email            : "celenort@snu.ac.kr"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
