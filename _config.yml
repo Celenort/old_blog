@@ -104,13 +104,13 @@ analytics:
 author:
   name             : "Celenort"
   avatar           : "/assets/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Post **NOT** to forget"
+  bio              : "평범한(?) 공대생 입니다."
   location         : "Seoul, Rep. of Korea"
   email            : "celenort@snu.ac.kr"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:b015404.asd@gmail.com"
+      url: "mailto:celenort@snu.ac.kr"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://celenort.github.io"
