@@ -104,6 +104,13 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "nac" %}
+                        <li><a href="/categories/study/nac" class="">선박계산 [22 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title"><a href="/categories/music">Music</a></span>
             <ul>
                 {% for category in site.categories %}
