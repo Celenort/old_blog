@@ -111,6 +111,20 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "logicdesign" %}
+                        <li><a href="/categories/study/logicdesign" class="">논리설계 및 실험 [22 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "linearalgebra" %}
+                        <li><a href="/categories/study/linearalgebra" class="">전기시스템선형대수 [22 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title"><a href="/categories/music">Music</a></span>
             <ul>
                 {% for category in site.categories %}
