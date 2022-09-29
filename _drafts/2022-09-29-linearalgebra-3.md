@@ -5,6 +5,7 @@ categories:
   - study
   - linearalgebra
 tags: []
+toc: false
 ---
 
 ### <b> Problem 1 - Simulation of the SIR model

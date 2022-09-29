@@ -5,6 +5,7 @@ categories:
   - study
   - linearalgebra
 tags: []
+toc: false
 ---
 
 
