@@ -1,5 +1,5 @@
 ---
-title: '유체역학기초 Chap 1~3'
+title: '유체역학기초 Chap 1~2'
 layout: single
 categories:
   - study
