@@ -1,5 +1,5 @@
 ---
-title: '논리설계 및 실험 1'
+title: '논리설계 및 실험 2'
 layout: single
 categories:
   - study
