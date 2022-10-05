@@ -66,15 +66,15 @@ $$ \int p_0 y dA + \int \rho g \sin{\theta} y^2 dA $$
 
 $$ p_0 y_cA + \rho g\sin{\theta} I_{xx}$$
 
-- 평행축 정리, $I_{xx} = I_{\hat{x}\hat{x}}+Ay_c^2$
+- 평행축 정리, $I_{xx} = I_{\hat{x}\hat{x} }+Ay_c^2$
 
 $$ y' \cdot A(p_0 + \rho g h_c) = p_0 Ay_c + \rho g \sin{\theta} I_{xx}+\rho g \sin{\theta} A y_c^2 $$
 
-$$ y' = y_c + {\rho g \sin{\theta}I_{\hat{x}\hat{x}} \over Ay_c (p_0+\rho g h_c)} $$
+$$ y' = y_c + {\rho g \sin{\theta}I_{\hat{x}\hat{x} } \over Ay_c (p_0+\rho g h_c)} $$
 
 - 반대쪽에도 p_0의 압력이 작용한다면?
 
-$$ y'=y_c + {I_{\hat{x}\hat{x}}\over Ay_c}$$
+$$ y'=y_c + {I_{\hat{x}\hat{x} }\over Ay_c}$$
 
 - Similarly x축 : 
 
@@ -82,9 +82,9 @@ $$ x' \cdot F_R = \int xdF = \int x(p_0+\rho g \sin{\theta}y)dA $$
 
 $$ = p_0 \int xdA + \rho g \sin{\theta}\int xydA $$
 
-$$ = x_c(p_0 + \rho g y_c\sin{\theta}) A + \rho g \sin{\theta}I{\hat{x}\hat{y}} $$
+$$ = x_c(p_0 + \rho g y_c\sin{\theta}) A + \rho g \sin{\theta}I{\hat{x}\hat{y} } $$
 
-$$ \therefore x' = x_c + {\rho g \sin{\theta}I_{\hat{x}\hat{y}}\over F_R} $$
+$$ \therefore x' = x_c + {\rho g \sin{\theta}I_{\hat{x}\hat{y} }\over F_R} $$
 
 ### Hydrostatic force on a curved submerged surface
 

@@ -53,7 +53,7 @@ tags: []
 
 #### Steady Flow
 
-- $ {{\delta \eta}\over{\delta t}} = 0 $ , $ \eta $ : properties of fluid 
+- $ { {\delta \eta}\over{\delta t} } = 0 $ , $ \eta $ : properties of fluid 
 - 일 때 정상 유동, Steady flow라고 명명.
 
 #### One/Two/Three Dimension flow
