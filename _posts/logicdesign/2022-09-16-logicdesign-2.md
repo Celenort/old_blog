@@ -7,7 +7,7 @@ categories:
 tags: []
 ---
 
-## Ch 1. Combinational Logic
+## Ch 2. Combinational Logic
 
 ### Definition of combinational logic
 
@@ -144,3 +144,33 @@ tags: []
 - F'에 대한 SoP에 드모르간을 쓰면 F에 대한 PoS가 됨. 
 - F' = A'B'C' + A'BC'+AB'C'
 - (F')' = F = (A+B+C)(A+B'+C)(A'+B+C)
+
+### Conversion between canonical Forms
+
+- Minterm <=> Maxterm conversion : F(A,B,C) = m(1,3,5,6,7) = M(0,2,4)
+- DNF of F to DNF of F' : use Minterms whose indices do not appear F(A,B,C) = m(1,3,5,6,7) / F' = m(0,2,4)
+- CNF of F to CNF of F' : same
+
+### Don't Care term 
+
+- use X mark in truth table
+- assigned 0 or 1 to simplify the circuit of Z as much as possible
+
+### Boolean Cubes
+
+- Visual Technique (n-cube)
+- n input var = n-dim cube
+- Adjacency Plane - Adjacent plane corresponds to a product term
+- Merge adjacency plane
+- m dimensional adjacency plane within an n-dimensional cube => n-m literals.
+
+### Karnaugh Maps
+
+- Reformulation of the truth table. 
+- numbering scheme based on gray-code
+- 00,01,11,10
+- 000,001,011,010,100,111,101,100
+
+#### Adjacencies in K-Maps
+
+- n variable -> n adjacency (direction) possible
