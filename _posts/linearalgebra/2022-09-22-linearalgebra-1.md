@@ -24,25 +24,26 @@ tags: []
 - $\beta_1, \beta_2, \cdots \beta_m $ : scalar
 - linear combination : $\beta_1\bf{a_1} + \beta_2\bf{a_2}+\cdots++ \beta_m\bf{a_m}$
 
-### Inner product
+### Sparsity
 
-- 
+- a vector is sparse if many of its entries are 0
+- nnz(x) : number of entries that are nonzero
 
+### Inner product function
 
-## 1. Vectors
+- $\bf a$ : n-vector
+- $f(\bf{x}) = \bf{a^T x} = a_1 x_1 + \cdots a_n x_n $
+- Linear function is inner product function. 증명은 superposition을 inner product에 넣기.
+- 그 반대 : x를 e1~en으로 분리해서 증명.
 
-### Vectors
+### Affine Function
 
-- ordered list of numbers
-- numbers in the list are elements(entries, coefficients, components)
-- number of elements is the size(dimension, length) of vector
-- n size vector => n-vector
-- numbers => scalars
+- affine : linear + constant.
+- $f(\bf x) = \bf{a^T x} + b$ with n-vector and b.
+- f is affine if and only if $f(\alpha \bf{x} + \beta \bf{y}) = \alpha f(\bf{x}) + \beta f(\bf{y})$ holds for all $\alpha, \beta$ with $\alpha +\beta = 1$. 
 
-#### Vectors via symbols
+### First-order Taylor approximation
 
-- boldface to denot vectors. (or overheadarrow)
-- ith element => $a_i$
-- i is index
-- if $\bold{a} = \bold{b}$ , size, each elements are same. 
-- $$
+- First order Taylor approximation of f, near point $\bf z$ :
+
+$$ \hat{f}(\bf{x}) = f(\bf{z}) + {\ }
