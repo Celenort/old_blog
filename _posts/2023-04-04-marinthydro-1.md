@@ -95,3 +95,18 @@ tags: []
 
   $$We = {\rho V^2 L\over \sigma}  \sim {Inertia\over Surface ~ tension}$$
 
+## 2.2. Drag force on Sphere
+
+### 2.2.1. Dimensional Analysis
+
+- Problem : Drag force upon a sphere moving in a viscous fluid
+- Assumption : 
+
+  - constant velocity U
+  - unbounded extent (boundary is too far compared to the  diameter of sphere)
+  - smooth surface (negligible friction effect)
+
+- Dimensional Analysis
+
+  - Q : Drag force D
+  - diameter d[$L$], fluid velocity U[$LT^{-1}$] , density, 
