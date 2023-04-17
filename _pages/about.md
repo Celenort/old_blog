@@ -1,6 +1,6 @@
 ---
 permalink: /about/
-title: "About Celenort"
+title: "WHO AM I"
 toc: false
 toc_sticky: false
 layout: single
@@ -8,9 +8,11 @@ sidebar_main: false
 comments: false
 ---
  
-## ☕ Life with Ease!
+## ☕ Serious Coffee Addict
 
-![icon](/assets/images/sos.ico)
+![icon](/assets/images/profile.jpg)
+
+- Improvision to memory.
 
 ### 📰 Bio
  
@@ -23,7 +25,9 @@ comments: false
 <ul>"Numerical Analysis of the Carman Vortex Phenomenon in Jeju Island using 3D Modeling and CFD Experiments" <a href="https://github.com/Celenort/Celenort/blob/master/files/18.pptx">PPT</a>, <a href="https://github.com/Celenort/Celenort/blob/master/files/18.pdf">PDF</a> (2019)</ul>
 <ul>"Enhancement of Radio Sound Quality Using Noise Reduction Algorithm", <a href="https://github.com/Celenort/Celenort/blob/master/files/10.pptx">PPT</a>, <a href="https://github.com/Celenort/Celenort/blob/master/files/10.pdf">PDF</a> (Jan 2020)</ul>
 <ul>Graduated from DDSHS(Daejeon Dongsin Science Highschool) (Feb 2021)</ul>
-<ul>Undergarduate Student at SNU <a href="https://naoe.snu.ac.kr/">NAOE</a> 21</ul>
+<ul>Undergarduate Student at SNU <a href="https://naoe.snu.ac.kr/">Naval Architecture and Ocean Engineering</a> 21 spr</ul>
+<ul>Double major at SNU <a href="https://ee.snu.ac.kr/">Electrical and Computer Engineering </a> from 22 fall</ul>
+
 
 </p>
 </details>
@@ -31,10 +35,10 @@ comments: false
 
 ### ❗ Interests
 
-- ⚙️ Engineering
-- 🖥️ Programming - especially Algorithms, Low-level Languages
-- 🎮 Games! - Several PC games and Mobile games
-- 🎹 Music! - Likes to play the piano and compose/arrange songs
+- ⚙️ Engineering - Fluid dynamics, Thermodynamics etc...
+- 🖥️ Programming - C++ / C / C# / Java / Python (intermediate)
+- 🎹 Music! - Listening / Playing / Composing
+- 🎮 Games! - Several PC games and Mobile games 
 
 ### ☎️ Contact
 

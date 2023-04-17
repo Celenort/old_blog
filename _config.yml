@@ -16,11 +16,12 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "셀레 \"노트\""
-title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+title                    : "Celenort"
+title_separator          : "::"
+subtitle                 : "Impromptu"
+# site tagline that appears below site title in masthead
 name                     : "Celenort"
-description              : "Post NOT to forget"
+description              : "Ex impromptu ad memoriam"
 url                      : "https://celenort.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "Celenort/celenort.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -104,7 +105,7 @@ analytics:
 author:
   name             : "Celenort"
   avatar           : "/assets/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "평범한(?) 공대생 입니다."
+  bio              : "Matthew 5:13-16"
   location         : "Seoul, Rep. of Korea"
   email            : "celenort@snu.ac.kr"
   links:
@@ -122,10 +123,10 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/celenort"
+      url: 
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://instagram.com/celen0rt"
 
 # Site Footer
 footer:
@@ -138,7 +139,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/celenort"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -147,7 +148,7 @@ footer:
       # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      url: "https://instagram.com/celen0rt"
 
 
 # Reading Files
