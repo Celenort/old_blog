@@ -1,0 +1,171 @@
+{% assign sum = site.posts | size %}
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+            Total Posts :  {{sum}}
+      </li>
+      <li>
+
+        <span class="nav__sub-title"><a href="/categories/life">Lifestyle</a></span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "algorithm" %}
+                        <li><a href="/categories/life/algorithm" class="">Leetcode 알고리즘 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "etc" %}
+                        <li><a href="/categories/life/etc" class="">미분류 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title"><a href="/categories/study">Univ. Study</a></span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "phys" %}
+                        <li><a href="/categories/study/phys" class="">물리 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "physlab1" %}
+                        <li><a href="/categories/study/phys/physlab1" class="">ㄴ물리학실험 1 [21 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "physlab2" %}
+                        <li><a href="/categories/study/phys/physlab2" class="">ㄴ물리학실험 2 [21 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "csharp" %}
+                        <li><a href="/categories/study/csharp" class="">컴퓨터의 개념과 실습 [21 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "stats" %}
+                        <li><a href="/categories/study/stats" class="">통계학 [21 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "english" %}
+                        <li><a href="/categories/study/english" class="">대학영어 1 [21 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "chemistry" %}
+                        <li><a href="/categories/study/chemistry" class="">화학 [21 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "chemlab" %}
+                        <li><a href="/categories/study/chemlab" class="">화학실험 [21 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "philosophy" %}
+                        <li><a href="/categories/study/philosophy" class="">서양철학의 이해 [21 Wint] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "offshore" %}
+                        <li><a href="/categories/study/offshore" class="">해양플랫폼공학개론 [22 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "psychology" %}
+                        <li><a href="/categories/study/psychology" class="">심리학개론 [22 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "nac" %}
+                        <li><a href="/categories/study/nac" class="">선박계산 [22 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "logicdesign" %}
+                        <li><a href="/categories/study/logicdesign" class="">논리설계 및 실험 [22 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "linearalgebra" %}
+                        <li><a href="/categories/study/linearalgebra" class="">전기시스템선형대수 [22 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "fluidbasic" %}
+                        <li><a href="/categories/study/fluidbasic" class="">유체역학기초 [22 Fall] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "cpp" %}
+                        <li><a href="/categories/study/cpp" class="">프로그래밍방법론 [23 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "marinehydro" %}
+                        <li><a href="/categories/study/marinehydro" class="">선박해양유체역학 [23 Spr] ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title"><a href="/categories/music">Music</a></span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "celeskey" %}
+                        <li><a href="/categories/music/celeskey" class="">Cele's Key ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "pnopractice" %}
+                        <li><a href="/categories/music/pnopractice" class="">피아노 연습 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "compose" %}
+                        <li><a href="/categories/music/compose" class="">작곡 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+      </li>
+  </ul>
+</nav>
