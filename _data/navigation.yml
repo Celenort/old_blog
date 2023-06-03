@@ -54,17 +54,19 @@ blog:
         url: /blog/javascript/
 
 # sidebar navigation list sample
-sidebar-sample:
-  - title: "Parent Page A"
+study:
+  - title: "2021-1"
     children:
-      - title: "Child Page A1"
-        url: /
+      - title: "물리학"
+        url: /phys/
+        name: "chem"
       - title: "Child Page A2"
         url: /
       - title: "Child Page A3"
         url: /
       - title: "Child Page A4"
         url: /
+    name: "phys"
   - title: "Parent Page B"
     children:
       - title: "Child Page B1"
