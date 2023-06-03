@@ -22,6 +22,7 @@
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
     {% include_cached skip-links.html %}
     {% include masthead.html %}
+    {% include mathjax.html %}
 
     <div class="initial-content">
       {{ content }}
