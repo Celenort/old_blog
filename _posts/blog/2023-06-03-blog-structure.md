@@ -1,8 +1,14 @@
 ---
 title: "Structure"
-permalink: /docs/structure/
-excerpt: "How the theme is organized and what all of the files are for."
-last_modified_at: 2018-03-20T15:19:22-04:00
+permalink: /blog/structure/
+excerpt: "MMistakes 테마의 폴더 및 파일 구조를 알아보자"
+last_modified_at: 2023-06-03T11:08:22+09:00
+toc: true
+toc_sticky: true
+sidebar:
+  nav: "blog"
+author_profile: false
+show_date: true
 ---
 
 Nothing clever here :wink:. Layouts, data files, and includes are all placed in their default locations. Stylesheets and scripts in `assets`, and a few development related files in the project's root directory.
