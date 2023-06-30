@@ -2,12 +2,10 @@
 main:
   - title: "About"
     url: /about/
-  - title: "Sample Posts"
+  - title: "Year-archive"
     url: /year-archive/
-  - title: "Sample Collections"
+  - title: "Music-collections"
     url: /collection-archive/
-  - title: "Terms &amp; Privacy Policy"
-    url: /terms/
 
 
 # documentation links
@@ -44,8 +42,10 @@ blog:
         url: /blog/pages/
       - title: "Collection 서식 수정"
         url: /blog/collections/
-      - title: "도움 되는 HTML 사용법"
+      - title: "도움말"
         url: /blog/helpers/
+      - title: "유틸리티 클래스"
+        url: /blog/utility-classes/
   - title: Extras
     children:
       - title: "CSS"
