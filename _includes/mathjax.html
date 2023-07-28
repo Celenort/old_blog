@@ -27,6 +27,10 @@ window.MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script> -->
 <script type="text/x-mathjax-config">
+window.MathJax = {
+  loader: {load: ['[tex]/boldsymbol']},
+  tex: {packages: {'[+]': ['boldsymbol']}}
+};
 MathJax.Hub.Config({
     TeX: {
       equationNumbers: {
