@@ -12,14 +12,10 @@ main:
 blog:
   - title: Getting Started
     children:
-      - title: "Github Blog 리뉴얼 도전기"
+      - title: "설치하기"
         url: /blog/guide-tutorial/
       - title: "파일 구조"
         url: /blog/structure/
-      - title: "설치하기"
-        url: /blog/installation/
-      - title: "업그레이드"
-        url: /blog/upgrading/
   - title: Customization
     children:
       - title: "설정 파일"
@@ -52,7 +48,7 @@ blog:
         url: /blog/stylesheets/
       - title: "JavaScript"
         url: /blog/javascript/
-      - title: "Mathjax"
+      - title: "Mathjax로 수식 입력"
         url: /blog/mathjax/
 
 # sidebar navigation list sample
