@@ -1,5 +1,5 @@
 ---
-permalink: /categories/
+permalink: /categories_configured/
 title: "Posts by Category"
 toc: false
 toc_sticky: false
