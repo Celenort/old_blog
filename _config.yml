@@ -120,7 +120,7 @@ author:
       url: "https://celenort.github.io"
     - label: "Youtube"
       icon: "fab fa-fw fa-youtube"
-       url: "https://www.youtube.com/@celeskey"
+      url: "https://www.youtube.com/@celeskey"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
