@@ -17,9 +17,9 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "Celenort"
+title                    : "Cele-Archive"
 title_separator          : "::"
-subtitle                 : "Impromptu"
+subtitle                 : "Archive Celestial Memories"
 # site tagline that appears below site title in masthead
 name                     : "Celenort"
 description              : "Ex impromptu ad memoriam"
@@ -32,7 +32,7 @@ masthead_title           : # overrides the website title displayed in the masthe
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider               : "utterances" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -43,7 +43,7 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
-    theme                : # "github-light" (default), "github-dark"
+    theme                : "github-light" # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
   giscus:
     repo_id              : # Shown during giscus setup at https://giscus.app
@@ -106,9 +106,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Celenort"
+  name             : "김찬진"
   avatar           : "/assets/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Matthew 5:13-16"
+  bio              : "Steady"
   location         : "Seoul, Rep. of Korea"
   email            : "celenort@snu.ac.kr"
   links:
@@ -118,15 +118,15 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://celenort.github.io"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+    - label: "Youtube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/@celeskey"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: 
+      url: "https://github.com/celenort"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/celen0rt"
@@ -143,9 +143,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/celenort"
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
+    - label: "Youtube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/@celeskey"
     - label: "Bitbucket"
       icon: "fab fa-fw fa-bitbucket"
       # url:
@@ -307,6 +307,7 @@ defaults:
       mathjax: true
       toc: true
       toc_sticky: true
+      comments: true
   # _pages
   - scope:
       path: "_pages"
