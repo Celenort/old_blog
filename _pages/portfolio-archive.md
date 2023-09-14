@@ -1,10 +1,10 @@
 ---
-title: Portfolio
+title: Cele's Keys
 layout: collection
-permalink: /portfolio/
-collection: portfolio
+permalink: /celeskey/
+collection: celeskey
 entries_layout: grid
 classes: wide
 ---
 
-Sample document listing for the collection `_portfolio`.
+Sample document listing for the collection `_cele's keys`.
