@@ -1,0 +1,28 @@
+/* =========================================================
+   TRANSITIONS — Global animations and hover effects
+   ========================================================= */
+
+/* Smooth transitions for grid items and thumbnails */
+.posts,
+.post,
+.thumbnail img {
+  transition: all 0.4s ease-in-out;
+}
+
+/* Hover elevation */
+.post:hover {
+  z-index: 2;
+}
+
+/* Grid layout adjustment on resize */
+@media (prefers-reduced-motion: no-preference) {
+  .posts {
+    transition: grid-template-columns 0.4s ease-in-out, gap 0.3s ease-in-out;
+  }
+}
+
+/* Fade-in keyframes for modal */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

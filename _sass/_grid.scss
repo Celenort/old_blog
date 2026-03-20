@@ -1,0 +1,123 @@
+/* =========================================================
+   GRID — Responsive Masonry-like post layout
+   ========================================================= */
+.posts .post.is-hidden {
+  display: none !important;
+}
+
+.posts {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  @media (min-width: 600px)  { grid-template-columns: repeat(4, 1fr); }
+  @media (min-width: 780px)  { grid-template-columns: repeat(5, 1fr); }
+  @media (min-width: 960px)  { grid-template-columns: repeat(6, 1fr); }
+  @media (min-width: 1140px) { grid-template-columns: repeat(7, 1fr); }
+}
+
+/* =========================================================
+   Thumbnail card
+   ========================================================= */
+.thumbnail {
+  position: relative;
+  aspect-ratio: 1 / 1.414;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eee;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0);
+    opacity: 0;
+    transition: all 0.2s ease;
+
+    .title {
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+    }
+  }
+
+  &:hover .overlay {
+    background: rgba(0,0,0,0.45);
+    opacity: 1;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  }
+}
+/* =========================================================
+   Disabled / Unfinished posts (done: false)
+   ========================================================= */
+.posts .post--undone {
+  position: relative;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+/* ✅ 기본 상태 — 검은 오버레이로 덮기, 글씨 숨김 */
+.posts .post--undone .thumbnail {
+  position: relative;
+}
+
+.posts .post--undone .thumbnail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  transition: background 0.3s ease;
+  z-index: 2; /* 기존 overlay 위로 */
+}
+
+/* ✅ 글씨 기본은 숨김 */
+.posts .post--undone .overlay {
+  opacity: 0 !important;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+/* ✅ hover 시 — 더 짙은 검정 배경 + 글씨 보이기 */
+.posts .post--undone:hover .thumbnail::after {
+  background: rgba(0, 0, 0, 0.85) !important;
+}
+
+.posts .post--undone:hover .overlay {
+  opacity: 1 !important;
+}
+
+/* ✅ 이미지 자체는 변형하지 않음 */
+.posts .post--undone .thumbnail img {
+  opacity: 1 !important;
+  filter: none !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ overlay 글씨 밝게 */
+.posts .post--undone .overlay .title {
+  color: #fff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ✅ 정상 포스트의 hover 효과가 undone에 덮이지 않도록 막음 */
+.posts .post--undone.thumbnail:hover .overlay,
+.posts .post--undone:hover .thumbnail:hover .overlay {
+  background: none !important;
+}

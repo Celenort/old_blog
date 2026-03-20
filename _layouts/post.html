@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<!-- Post card container (used as modal data source) -->
+<div class="post-card">
+  <div class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-meta">
+      <span class="date">{{ page.date | date_to_string }}</span>
+
+        {% if page.experience_date %}
+          {% assign label = "Experienced on" %}
+          {% if page.content_type == "book" %}
+            {% assign label = "Read on" %}
+          {% elsif page.content_type == "music" %}
+            {% assign label = "Listened on" %}
+          {% elsif page.content_type == "movie" %}
+            {% assign label = "Watched on" %}
+          {% endif %}
+          <span class="experience-date"> • {{ label }} {{ page.experience_date | date_to_string }}</span>
+        {% endif %}
+
+    </div>
+  </div>
+
+  {% assign media = page.media %}
+  {% if media and media.size > 0 %}
+    <!-- Render post media (images or videos) -->
+    <div class="media-container">
+      {% for item in media %}
+        {% include media.html src=item.url type=item.type %}
+      {% endfor %}
+    </div>
+  {% elsif page.thumbnail %}
+    <!-- Fallback to thumbnail if media is not defined -->
+    <div class="media-container">
+      <img src="{{ page.thumbnail | absolute_url }}" alt="{{ page.title }}">
+    </div>
+  {% endif %}
+
+  <!-- Post content -->
+  <div class="post-content">
+    {{ content }}
+  </div>
+</div>

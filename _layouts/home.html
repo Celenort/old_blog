@@ -1,23 +1,227 @@
 ---
-layout: archive
-auther_profile: true
+layout: default
 ---
 
-{{ content }}
+<main class="main">
+  <div class="posts">
+    {%- assign all_posts = site.posts | sort: "experience_date" | reverse -%}
+    {%- for post in all_posts -%}
+      {%- assign thumb = post.thumbnail -%}
+      {%- if thumb == nil and post.media and post.media.size > 0 -%}
+        {%- assign thumb = post.media[0].url -%}
+      {%- endif -%}
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+      <div
+        class="post{% if post.done == false or post.done == 'false' %} post--undone{% endif %}"
+        data-url="{{ post.url | relative_url }}"
+        data-index="{{ forloop.index0 }}"
+        data-content="{{ post.content_type | default: 'book' }}"
+        {% if post.done == false or post.done == 'false' %}data-undone="true"{% endif %}
+      >
+        <a class="post-link"
+           href="{{ post.url | relative_url }}"
+           aria-label="{{ post.title | escape }}"
+           {% if post.done == false or post.done == 'false' %}
+             style="pointer-events:none; cursor:not-allowed;"
+           {% endif %}
+        >
+          <div class="thumbnail">
+            {%- if thumb -%}
+              <img src="{{ thumb | relative_url }}" alt="{{ post.title | escape }}">
+            {%- endif -%}
+            <div class="overlay">
+              <div class="title">{{ post.title }}</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    {%- endfor -%}
+  </div>
+</main>
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
-
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
-    {% include archive-single.html type=entries_layout %}
-  {% endfor %}
+<!-- Modal -->
+<div class="modal-overlay" id="post-modal" aria-hidden="true">
+  <div class="modal-frame">
+    <button class="modal-close" type="button" aria-label="Close">×</button>
+    <button class="modal-nav prev" type="button" aria-label="Previous">&#x2039;</button>
+    <button class="modal-nav next" type="button" aria-label="Next">&#x203A;</button>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Post viewer">
+      <div class="modal-inner">
+        <div class="modal-image">
+          <img id="modal-photo" alt="">
+        </div>
+        <div class="modal-info">
+          <div class="modal-profile">
+            <img class="profile-mini" src="{{ site.profile_image | relative_url }}" alt="{{ site.title | default: 'Profile' }}">
+            <div class="profile-name">{{ site.name | default: site.title | default: "Profile" }}</div>
+          </div>
+          <div class="post-title" id="modal-title"></div>
+          <div class="post-meta" id="modal-meta"></div>
+          <div class="post-content" id="modal-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<script>
+(function () {
+  const modal = document.getElementById('post-modal');
+  const imgEl = document.getElementById('modal-photo');
+  const titleEl = document.getElementById('modal-title');
+  const metaEl = document.getElementById('modal-meta');
+  const contentEl = document.getElementById('modal-content');
+  const btnClose = modal.querySelector('.modal-close');
+  const btnPrev = modal.querySelector('.modal-nav.prev');
+  const btnNext = modal.querySelector('.modal-nav.next');
+  const grid = document.querySelector('.posts');
+  if (!grid) return;
 
-{% include paginator.html %}
+  const cards = Array.from(grid.querySelectorAll('.post'));
+  let current = -1;
+
+  function visibleIndices() {
+    return cards
+      .map((el, i) =>
+        (el.classList.contains('is-hidden') || el.dataset.undone === "true") ? null : i
+      )
+      .filter(i => i !== null);
+  }
+
+  function openModal(index, thumbSrc) {
+    const postEl = cards[index];
+    if (postEl.dataset.undone === "true") return;
+
+    current = index;
+    if (!modal.classList.contains('active')) {
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    if (thumbSrc) imgEl.src = thumbSrc;
+    loadPost(cards[index].dataset.url, thumbSrc);
+  }
+
+  async function loadPost(url, fallbackThumb) {
+    try {
+      const res = await fetch(url, { credentials: 'same-origin' });
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const card = doc.querySelector('.post-container') || doc.body;
+
+      const titleNode = card.querySelector('.post-title') || doc.querySelector('h1');
+      titleEl.textContent = titleNode ? titleNode.textContent.trim() : '';
+
+      const metaNode = card.querySelector('.post-meta, .date');
+      metaEl.textContent = metaNode ? metaNode.textContent.trim() : '';
+
+      let mediaImg =
+        card.querySelector('.media-container img') ||
+        card.querySelector('.post-content img:first-of-type') ||
+        card.querySelector('img:not(.profile-mini)');
+      if (mediaImg && mediaImg.getAttribute('src')) {
+        imgEl.src = mediaImg.getAttribute('src');
+      } else if (fallbackThumb) {
+        imgEl.src = fallbackThumb;
+      }
+
+      const contentNode = card.querySelector('.post-content');
+      contentEl.innerHTML = contentNode ? contentNode.innerHTML : '';
+    } catch (err) {
+      titleEl.textContent = '';
+      metaEl.textContent = '';
+      contentEl.innerHTML = '<div style="color:#c00;font-weight:600">Failed to load post.</div>';
+      if (!imgEl.src && fallbackThumb) imgEl.src = fallbackThumb;
+      console.warn('Load error:', err);
+    }
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    imgEl.src = '';
+    titleEl.textContent = '';
+    metaEl.textContent = '';
+    contentEl.innerHTML = '';
+    current = -1;
+  }
+
+  function nextIndex(dir) {
+    const vis = visibleIndices();
+    if (!vis.length || current < 0) return -1;
+    const pos = vis.indexOf(current);
+    if (pos === -1) return vis[0];
+    const nextPos = (pos + dir + vis.length) % vis.length;
+    return vis[nextPos];
+  }
+
+  grid.addEventListener('click', (e) => {
+    const link = e.target.closest('.post-link');
+    if (!link) return;
+    e.preventDefault();
+    const postEl = link.closest('.post');
+    if (postEl.dataset.undone === "true") return;
+    const idx = parseInt(postEl.dataset.index, 10);
+    const img = link.querySelector('img');
+    const thumb = img ? img.currentSrc || img.src : null;
+    openModal(idx, thumb);
+  });
+
+  btnClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      const dir = e.key === 'ArrowLeft' ? -1 : 1;
+      const ni = nextIndex(dir);
+      if (ni !== -1) {
+        const img = cards[ni].querySelector('img');
+        openModal(ni, img ? img.currentSrc || img.src : null);
+      }
+    }
+  });
+
+  btnPrev.addEventListener('click', () => {
+    const ni = nextIndex(-1);
+    if (ni !== -1) {
+      const img = cards[ni].querySelector('img');
+      openModal(ni, img ? img.currentSrc || img.src : null);
+    }
+  });
+
+  btnNext.addEventListener('click', () => {
+    const ni = nextIndex(1);
+    if (ni !== -1) {
+      const img = cards[ni].querySelector('img');
+      openModal(ni, img ? img.currentSrc || img.src : null);
+    }
+  });
+
+  // ✅ Swipe sensitivity improved
+  let startX = null, startY = null;
+  modal.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+
+  modal.addEventListener('touchend', (e) => {
+    if (startX === null || startY === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    startX = startY = null;
+
+    if (Math.abs(dx) > 80 && Math.abs(dx) > Math.abs(dy) * 2) {
+      const dir = dx > 0 ? -1 : 1;
+      const ni = nextIndex(dir);
+      if (ni !== -1) {
+        const img = cards[ni].querySelector('img');
+        openModal(ni, img ? img.currentSrc || img.src : null);
+      }
+    }
+  }, { passive: true });
+})();
+</script>
