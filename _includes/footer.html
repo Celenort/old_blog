@@ -1,0 +1,34 @@
+{%- assign error = false -%}
+{%- assign message = "" -%}
+
+{%- if site.posts.size > 0 -%}
+{%- if site.theme_config.archive -%}
+{%- if site.posts.first.archive_date == nil -%}
+{%- assign error = true -%}
+{%- assign message = "Error: Archive Date is missing in your latest post. " -%}
+{%- else -%}
+{%- assign message = site.posts.first.archive_date | date_to_string -%}
+{%- endif -%}
+{%- else -%}
+{%- if site.posts.first.date == nil -%}
+{%- assign message = "Error: Date is missing in your latest post. " -%}
+{%- else -%}
+{%- assign message = site.posts.first.date | date_to_string -%}
+{%- endif -%}
+{%- endif -%}
+{%- endif -%}
+
+<footer class="footer">
+    <div class="last-updated">
+        last updated:&nbsp;
+        {%- if error -%}
+        <span style="color: red;">{{ message }}</span>
+        {%- else -%}
+        {{ message }}
+        {%- endif -%}
+    </div>
+    <div class="links">
+        <div>{{ site.footer_website }}</div>
+        <div>Follow <a href="https://instagram.com/{{ site.ig_username }}" target="_blank">{{ site.ig_username }}</a> on Instagram</div>
+    </div>
+</footer>

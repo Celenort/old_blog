@@ -1,0 +1,55 @@
+/* =========================================================
+   BASE — Typography, Body, and Layout resets
+   ========================================================= */
+
+/* ✅ 변수는 이미 _variables.scss에 정의되어 있음 */
+/* 불필요한 중복 선언 제거 완료 */
+
+@use "variables" as *;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: $base-font-stack;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #fff;
+  color: var(--text-color);
+}
+
+/* Layout wrapper */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Global link styles */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: $base-font-stack;
+  margin: 0.6em 0 0.3em;
+  color: #111;
+}
+
+/* Paragraphs */
+p {
+  margin: 0 0 1rem;
+}
+
+/* Horizontal line */
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 1.5rem 0;
+}

@@ -1,0 +1,270 @@
+/* =========================================================
+   MODAL — Fullscreen post view (final desktop + mobile)
+   ========================================================= */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* -------------------- Modal Frame (desktop) -------------------- */
+.modal-frame {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row; /* ✅ 좌우 레이아웃 유지 */
+  overflow: hidden; /* ✅ 데스크톱에서는 숨김 */
+}
+
+/* -------------------- Left: Fixed image -------------------- */
+.modal-image {
+  flex: 0 0 45%;               /* 고정된 너비 */
+  background: #fff;            /* 흰 배경 */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;          /* 내부 정렬용 */
+  overflow: hidden;            /* 스크롤 방지 */
+}
+
+.modal-image img {
+  width: 100%;
+  height: initial;
+  object-fit: fill;         /* 비율 유지 */
+  position: sticky;
+  top: 0;
+}
+
+/* -------------------- Right: Scrollable text area -------------------- */
+.modal-content {
+  flex: 1;
+  background: #fff;
+  overflow-y: auto;            /* ✅ 우측만 스크롤 */
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-info {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.modal-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+
+  img.profile-mini {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .profile-name {
+    font-weight: 600;
+  }
+}
+
+.modal-info .post-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.modal-info .post-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.modal-info .post-content {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #333;
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+  }
+}
+
+/* -------------------- Buttons -------------------- */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: dimgray;
+  cursor: pointer;
+  z-index: 30;
+}
+
+/* Navigation (desktop default: outside) */
+.modal-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.modal-nav:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.modal-nav.prev { left: 2%; }
+.modal-nav.next { right: 2%; }
+
+
+@media (min-width: 769px) {
+  /* ✅ modal-inner를 flex row로 */
+  .modal-inner {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow: auto;
+  }
+
+  /* 왼쪽: 이미지 */
+  .modal-image {
+    flex: 0 0 45%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: sticky; /* ✅ 스크롤해도 움직이지 않음 */
+    top: 0;
+    left: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 2;
+  }
+
+  .modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* 오른쪽: 스크롤 가능한 내용 */
+  .modal-info {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto; /* ✅ 글만 스크롤 */
+    background: #fff;
+    z-index: 1;
+  }
+
+  /* 기본 버튼 위치 (모달 밖) */
+  .modal-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.25);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+
+  .modal-nav:hover {
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .modal-nav.prev { left: 2%; }
+  .modal-nav.next { right: 2%; }
+}
+
+
+/* =========================================================
+   ✅ MOBILE VIEW — stacked layout, scrollable info
+========================================================= */
+@media (max-width: 768px) {
+  .modal-frame {
+    width: 92%;
+    max-height: 88vh;
+    border-radius: 12px;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .modal-content {
+    overflow: auto;
+    height: auto;
+  }
+
+  .modal-inner {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .modal-image {
+    width: 100%;
+    max-height: 60vh;
+    flex: 0 0 auto;
+    overflow: hidden;
+  }
+
+  .modal-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .modal-info {
+    flex: 1;
+    padding: 1rem 1rem 2rem;
+    overflow-y: auto;
+  }
+
+  /* ✅ 버튼: 모달 안쪽으로 이동 */
+  .modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    font-size: 1.6rem;
+    border-radius: 50%;
+    z-index: 25;
+    padding: .2rem .8rem;
+  }
+
+  .modal-nav.prev { left: 0.8rem; }
+  .modal-nav.next { right: 0.8rem; }
+}

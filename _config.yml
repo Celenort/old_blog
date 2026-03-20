@@ -1,0 +1,28 @@
+title: Conciencia
+name: Celenort
+description: 'A site about logging consciousness'
+url: https://celenort.site
+baseurl: ""
+profile_image: /assets/profile.jpg
+
+blog_url: https://blog.naver.com/celenort
+follow_url: https://note.celenort.site
+
+ig_name: celen0rt
+#ig_category: Jekyll Theme
+
+footer_website: celenort.site
+
+favicon: /assets/favicon.ico
+
+future: true
+
+remote_theme: 
+
+include:
+  - media
+
+sass:
+  style: :compressed
+  load_paths:
+    - _sass

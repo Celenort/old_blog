@@ -1,0 +1,21 @@
+/* =========================================================
+   FOOTER — Global site footer
+   ========================================================= */
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid var(--border-color);
+
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

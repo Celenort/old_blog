@@ -1,0 +1,103 @@
+<header class="header">
+  <div class="profile-wrapper">
+
+    <!-- Blog title -->
+    <div class="blog-title">
+      <a href="{{ site.url | default: '/' }}">
+        {{ site.title | default: site.name | default: 'My Site' }}
+      </a>
+    </div>
+
+    <!-- Profile section: Left profile / Right nickname + stats -->
+    <div class="profile-stats">
+      <div class="profile-pic-wrapper">
+        {% if site.profile_image %}
+          <img class="profile-pic" src="{{ site.profile_image | relative_url }}" alt="{{ site.name }}">
+        {% else %}
+          <img class="profile-pic" src="/media/profile.jpg" alt="{{ site.name }}">
+        {% endif %}
+      </div>
+      <!-- ✅ 닉네임 + 통계 묶음 -->
+      <div class="profile-info">
+        <div class="profile-name">{{ site.name }}</div>
+
+        <div class="stats-grid">
+          <div class="stat-label">Posts</div>
+          <div class="stat-label">Today</div>
+          <div class="stat-label">Total</div>
+
+          <div class="stat-value" id="post-count">{{ site.posts | size }}</div>
+          <div class="stat-value" id="today-visits">–</div>
+          <div class="stat-value" id="total-visits">–</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bio -->
+    {% assign _bio = site.bio | default: site.description | default: page.description %}
+    {% if _bio %}
+      <div class="bio-section">{{ _bio }}</div>
+    {% endif %}
+
+    <!-- Buttons -->
+    <div class="button-group">
+      <a class="btn blog-btn" href="{{ site.blog_url | default: '/' }}" target="_blank">Blog</a>
+      <a class="btn follow-btn" href="{{ site.follow_url | default: '/' }}" target="_blank">Note</a>
+    </div>
+
+    <!-- Tabs -->
+    <nav class="tab-group" id="filter-tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="book">Books</button>
+      <button class="tab" data-filter="movie">Movies</button>
+      <button class="tab" data-filter="music">Music</button>
+    </nav>
+  </div>
+</header>
+
+<!-- Visitor counter -->
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const res = await fetch("{{ '/data/visitors.json' | relative_url }}?v=" + Date.now(), { credentials: 'same-origin' });
+      const data = await res.json();
+      document.getElementById("today-visits").innerText =
+        (typeof data.today !== "undefined") ? data.today : "0";
+      document.getElementById("total-visits").innerText =
+        (typeof data.total !== "undefined") ? data.total : "0";
+    } catch (e) {
+      console.warn("Visitor data not loaded:", e);
+    }
+  });
+</script>
+
+<!-- Tab filter -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabsWrap = document.getElementById("filter-tabs");
+    if (!tabsWrap) return;
+    const tabs = tabsWrap.querySelectorAll(".tab");
+    const grid = document.querySelector(".posts");
+    if (!grid) return;
+    const cards = Array.from(grid.querySelectorAll(".post"));
+    function matches(el, filter) {
+      if (filter === "all") return true;
+      const contentType = (el.dataset.content || "").toLowerCase();
+      return contentType === filter;
+    }
+    function applyFilter(filter) {
+      cards.forEach(card => {
+        card.classList.toggle("is-hidden", !matches(card, filter));
+      });
+    }
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        applyFilter(tab.dataset.filter);
+      });
+    });
+    applyFilter("all");
+  });
+</script>
+
